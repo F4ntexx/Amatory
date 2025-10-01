@@ -66,13 +66,13 @@ function App() {
               Learn how to navigate the world of online dating with our
               insightful guides and articles.
             </div>
-            <a href=""  className="text-rose-600  font-bold">
+            <a href="/signIn"  className="text-rose-600  font-bold">
               Sign in ›
             </a>
-            <a href="" className="text-rose-600  font-bold">
+            <a href="/about" className="text-rose-600  font-bold">
               Get acquainted ›
             </a>
-            <a href="" className="text-rose-600  font-bold">
+            <a href="/advice" className="text-rose-600  font-bold">
               Get early access ›
             </a>
           </div>
@@ -81,7 +81,7 @@ function App() {
       <div className="flex items-center flex-col justify-center mt-50 py-20 text-white gap-3">
         <img src={worldImage} className="md:w-120"></img>
         <div>
-          <p className="uppercase font-bold text-3xl">
+          <p className="flex text-center uppercase font-bold text-3xl">
             Trust fate, find amatory
           </p>
           <ButtonsSignInUp />
