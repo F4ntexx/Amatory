@@ -5,8 +5,7 @@ function About() {
     <>
       <div className="text-white bg-neutral-950 h-500">
         <HeaderIndex />
-        <div>
-        </div>
+        <div></div>
       </div>
     </>
   );
