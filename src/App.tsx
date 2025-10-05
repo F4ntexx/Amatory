@@ -66,7 +66,7 @@ function App() {
               Learn how to navigate the world of online dating with our
               insightful guides and articles.
             </div>
-            <a href="/signIn"  className="text-rose-600  font-bold">
+            <a href="/signIn" className="text-rose-600  font-bold">
               Sign in ›
             </a>
             <a href="/about" className="text-rose-600  font-bold">
