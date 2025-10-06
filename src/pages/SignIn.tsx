@@ -2,6 +2,7 @@ import HeaderIndex from "../components/HeaderIndex";
 import SignButtons from "../components/SignButtons";
 import ErrorMessage from "../components/ErrorMessage";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 function SignIn() {
   const {
@@ -17,7 +18,18 @@ function SignIn() {
           className="flex flex-col justify-center items-center gap-5"
           id="form"
           onSubmit={handleSubmit((data) => {
-            console.log(data);
+            axios
+              .post("http://localhost:5000/use", {
+                data,
+              })
+              .then((response) => {
+                if ((response.status = 200)) {
+                  location.href = "/PersonalAccount";
+                }
+              })
+              .catch((error) => {
+                console.log(error);
+              });
           })}
         >
           <p className="text-2xl font-bold">Sign In</p>
