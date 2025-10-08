@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import ErrorMessage from "../components/ErrorMessage";
 import axios from "axios";
 
+
 function SignUp() {
   const {
     register,
@@ -19,7 +20,7 @@ function SignUp() {
           className="flex flex-col justify-center items-center gap-5"
           onSubmit={handleSubmit((data) => {
             axios
-              .post("http://localhost:5000/users", {
+              .post("http://localhost:4200/api/users", {
                 data,
               })
               .then((response) => {

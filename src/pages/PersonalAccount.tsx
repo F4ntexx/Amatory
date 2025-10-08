@@ -1,8 +1,12 @@
+import { Navbar } from "../components/Navbar";
 function PersonalAccount() {
-    return (
-        <>
-        <h1>aaa</h1></>
-    )
+  return (
+    <>
+      <div className="h-screen text-white">
+        <Navbar/>
+      </div>
+    </>
+  );
 }
 
 export default PersonalAccount;
