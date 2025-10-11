@@ -12,7 +12,7 @@ navLink?.classList.toggle('top-[9%]')
           <a href="/PersonalAccount">
           <img src={logotype} alt="" className="w-[50px]" /></a>
         </div>
-        <div className="md:static absolute md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5" id='nav-links'>
+        <div className="md:static absolute md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 bg-neutral-950" id='nav-links'>
           <ul className="flex flex-col md:flex-row md:items-center md:gap-[4vw] gap-8">
             <li>
               <a href="/Profile">Profile</a>
