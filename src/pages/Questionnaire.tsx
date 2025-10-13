@@ -1,10 +1,12 @@
 import { Navbar } from "../components/Navbar";
-export  function Questionnaire (){
-return( 
+import { SettingQuestionnaire } from "../components/SettingQuestionnaire";
+export function Questionnaire() {
+  return (
     <>
-         <div className="h-screen text-white">
-           <Navbar/>
-         </div>
-       </>
-)
+      <div className="h-screen bg-neutral-950 text-white">
+        <Navbar />
+        <SettingQuestionnaire />
+      </div>
+    </>
+  );
 }
