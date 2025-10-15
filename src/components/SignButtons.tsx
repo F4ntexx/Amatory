@@ -8,6 +8,7 @@ function SignButton() {
         bgcolor: "#f50057",
       }}
       type="submit"
+
     >
       Send
     </Button>

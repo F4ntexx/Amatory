@@ -3,35 +3,37 @@ import SignButton from "../components/SignButtons";
 import { useForm } from "react-hook-form";
 import ErrorMessage from "../components/ErrorMessage";
 import axios from "axios";
+import { observer } from "mobx-react-lite";
+import { AchievementValue } from "../stores/AchievmentValue";
 
-
-function SignUp() {
+export const SignUp = observer(() => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  function onSubmit(data: any) {
+    AchievementValue.setloveletter()
+    axios
+      .post("http://localhost:4200/api/users", {
+        data,
+      })
+      .then((response) => {
+        if ((response.status = 200)) {
+          location.href = "/PersonalAccount";
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   return (
     <>
       <div className="text-white">
         <HeaderIndex />
         <form
           className="flex flex-col justify-center items-center gap-5"
-          onSubmit={handleSubmit((data) => {
-            axios
-              .post("http://localhost:4200/api/users", {
-                data,
-              })
-              .then((response) => {
-                if ((response.status = 200)) {
-                  location.href = "/PersonalAccount";
-                }
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-          })}
+          onSubmit={handleSubmit(onSubmit)}
         >
           <p className="text-2xl font-bold">Sign Up</p>
           <input
@@ -96,5 +98,4 @@ function SignUp() {
       </div>
     </>
   );
-}
-export default SignUp;
+});

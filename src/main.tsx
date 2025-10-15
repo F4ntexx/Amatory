@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./Index.css";
 import App from "./App";
 import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
+import {SignUp} from "./pages/SignUp";
 import About from "./pages/About";
 import Advice from "./pages/Advice";
 import PersonalAccount from "./pages/PersonalAccount";
