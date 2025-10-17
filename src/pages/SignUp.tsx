@@ -13,7 +13,7 @@ export const SignUp = observer(() => {
     formState: { errors },
   } = useForm();
   function onSubmit(data: any) {
-    AchievementValue.setloveletter()
+    AchievementValue.setloveletter();
     axios
       .post("http://localhost:4200/api/users", {
         data,

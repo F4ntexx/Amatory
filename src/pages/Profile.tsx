@@ -4,7 +4,33 @@ import { ButtonsElements } from "../components/buttonsHobby";
 import { HabitsElements } from "../components/habits";
 import { AgeInput } from "../components/AgeInput";
 import { CityInput } from "../components/CityInput";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 export function Profile() {
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["user"],
+    queryFn: async () => {
+      const { data } = await axios.get("http://localhost:4200/api/users");
+      return data;
+    },
+  });
+
+  if (isError) {
+    return (
+      <div className="flex justify-center text-rose-600 text-5xl ">
+        Sorry is getting data - error
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center text-green-600 text-5xl">
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="text-white">
@@ -45,14 +71,14 @@ export function Profile() {
                 </div>
                 <div className="flex flex-col justify-center">
                   <Greeting
-                    name="Artem"
-                    surname="Rabets"
-                    email="f4ntxx@gmail.com"
+                    name={data.name}
+                    surname={data.surname}
+                    email={data.email}
                   />
                 </div>
               </div>
-                      <AgeInput/>
-                      <CityInput/>
+              <AgeInput />
+              <CityInput />
               <ButtonsElements />
               <HabitsElements />
             </form>
