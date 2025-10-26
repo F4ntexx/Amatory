@@ -4,9 +4,9 @@ export function AgeInput() {
       <select
         name="age"
         id="age-select"
-        className="text-white font-semibold rounded-md py-3 px-5 text-center bg-neutral-800 focus:outline-2 outline-offset-2 focus:outline-solid"
+        className="text-white font-semibold rounded-md py-3 w-50 text-center bg-neutral-800 focus:outline-2 outline-offset-2 focus:outline-solid"
       >
-        <option value=""> Выберите возраст </option>
+        <option value=""> Select age </option>
         <option value="16">16</option>
         <option value="17">17</option>
         <option value="18">18</option>

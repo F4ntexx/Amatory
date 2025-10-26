@@ -1,12 +1,15 @@
 import { Navbar } from "../components/Navbar";
 import Greeting from "../components/fieldsProfile";
-import { ButtonsElements } from "../components/buttonsHobby";
-import { HabitsElements } from "../components/habits";
-import { AgeInput } from "../components/AgeInput";
-import { CityInput } from "../components/CityInput";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 export function Profile() {
+  const navigate = useNavigate();
+
+  function redirect() {
+    navigate("/edits");
+  }
+
   const { data, isLoading, isError } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
@@ -17,17 +20,27 @@ export function Profile() {
 
   if (isError) {
     return (
-      <div className="flex justify-center text-rose-600 text-5xl ">
-        Sorry is getting data - error
-      </div>
+      <>
+        <div className="h-screen text-white ">
+          <Navbar />
+          <div className="flex justify-center items-center text-center  text-rose-600 text-5xl h-99">
+            Sorry is getting data - error
+          </div>
+        </div>
+      </>
     );
   }
 
   if (isLoading) {
     return (
-      <div className="flex justify-center text-green-600 text-5xl">
-        Loading...
-      </div>
+      <>
+        <div className="h-screen text-white">
+          <Navbar />
+          <div className="flex justify-center items-center text-center text-green-600 text-5xl h-99">
+            Loading...
+          </div>
+        </div>
+      </>
     );
   }
 
@@ -69,18 +82,18 @@ export function Profile() {
                     <input id="dropzone-file" type="file" className="hidden" />
                   </label>
                 </div>
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-center gap-5">
                   <Greeting
                     name={data.name}
                     surname={data.surname}
                     email={data.email}
                   />
+                  <button
+                    className="bg-neutral-800 h-8 w-30 rounded-md hover:bg-rose-500"
+                    onClick={redirect}
+                  >Edit profile</button>
                 </div>
               </div>
-              <AgeInput />
-              <CityInput />
-              <ButtonsElements />
-              <HabitsElements />
             </form>
           </div>
         </div>

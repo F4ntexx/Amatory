@@ -1,131 +1,32 @@
-export function ButtonsElements() {
-  const hobbyButtons = document.querySelectorAll(".hobbyButton");
-  const handleButtonHobby: any = [];
-  for (const element of hobbyButtons) {
-    let isButtonActive = false;
-    element.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (isButtonActive) {
-        handleButtonHobby.pop(element.id);
-        element.classList.remove("shadow-rose-100", "border-rose-900");
-        isButtonActive = false;
-      } else {
-        element.classList.add(
-          "px-2",
-          "py-2",
-          "rounded-xl",
-          "shadow-rose-100",
-          "border-2",
-          "border-rose-900"
-        );
-        handleButtonHobby.push(element.id);
-        isButtonActive = true;
-      }
-    });
-  }
+import { observer } from "mobx-react-lite";
+export const ButtonsElements = observer(() => {
   return (
     <>
-      <div className="flex flex-col gap-5">
-        <h1>Hobby</h1>
-        <div className="grid grid-cols-2 gap-2 w-80 h-7">
-          <button
-            className="hobbyButton   px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="footbol"
-          >
-            footbol
-          </button>
-          <button
-            className="hobbyButton   px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="swimming"
-          >
-            swimming
-          </button>
-          <button
-            className="hobbyButton   px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="basketboll"
-          >
-            basketball
-          </button>
-          <button
-            className="hobbyButton  px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="knitting"
-          >
-            knitting
-          </button>
-          <button
-            className="hobbyButton   px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="embroidery"
-          >
-            embroidery
-          </button>
-          <button
-            className="hobbyButton  px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="modeling"
-          >
-            modeling
-          </button>
-          <button
-            className="hobbyButton   px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="reading"
-          >
-            reading
-          </button>
-          <button
-            className="hobbyButton  px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="cooks"
-          >
-            cooks
-          </button>
-          <button
-            className="hobbyButton   px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="drawind"
-          >
-            drawing
-          </button>
-          <button
-            className="hobbyButton  px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="photography"
-          >
-            photography
-          </button>
-          <button
-            className="hobbyButton  px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="dance"
-          >
-            dance
-          </button>
-          <button
-            className="hobbyButton  px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="camping"
-          >
-            camping
-          </button>
-          <button
-            className="hobbyButton   px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="singleCombat"
-          >
-            single combat
-          </button>
-          <button
-            className="hobbyButton   px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="plaingComputerGame"
-          >
-            plaing computer game
-          </button>
-          <button
-            className="hobbyButton   px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="singing"
-          >
-            singing
-          </button>
-          <button
-            className="hobbyButton   px-2 py-2 rounded-xl shadow-rose-800 border-2 border-rose-600"
-            id="otherSports"
-          >
-            other sports
-          </button>
-        </div>
+      <div>
+        <select
+          name="hooby"
+          id="hobby-select"
+          className="text-white font-semibold rounded-md py-3 w-50 text-center bg-neutral-800 focus:outline-2 outline-offset-2 focus:outline-solid"
+        >
+          <option value=""> Select hobby </option>
+          <option value="footbol">footbol</option>
+          <option value="swimming">swimming</option>
+          <option value="basketball">basketball</option>
+          <option value="knitting">knitting</option>
+          <option value="embroidery"> embroidery</option>
+          <option value="modeling">modeling</option>
+          <option value="reading">reading</option>
+          <option value="cooks">cooks</option>
+          <option value="drawing">drawing</option>
+          <option value="photography">photography</option>
+          <option value="dance">dance</option>
+          <option value="camping">camping</option>
+          <option value="single combat">single combat</option>
+          <option value="plaing computer game">plaing computer game</option>
+          <option value="singing">singing</option>
+          <option value="other sports">other sports</option>
+        </select>
       </div>
     </>
   );
-}
+});

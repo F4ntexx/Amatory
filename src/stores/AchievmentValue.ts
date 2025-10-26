@@ -1,7 +1,7 @@
 import { action, makeAutoObservable } from "mobx";
 
 class Achievment {
-  loveletter =  false;
+  loveletter = false;
   Heartfelt = false;
   StruckLove = false;
   LoveChat = false;
@@ -15,10 +15,9 @@ class Achievment {
     makeAutoObservable(this);
   }
 
-setloveletter = action(() => {
-  this.loveletter = true;
-});
+  setloveletter = action(() => {
+    this.loveletter = true;
+  });
 }
 
-
-export const AchievementValue = new Achievment()
+export const AchievementValue = new Achievment();
