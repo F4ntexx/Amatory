@@ -1,5 +1,5 @@
 import HeaderIndex from "../components/HeaderIndex";
-import imageRelationsheep from "../assets/imageRelationsheep.jpg";
+import imageRelationsheep from "../assets/imageRelationsheep.webp";
 function About() {
   return (
     <>
@@ -28,13 +28,13 @@ function About() {
                 src={imageRelationsheep}
                 alt=""
                 className="w-screen h-screen object-center"
+                loading="lazy"
               />
             </div>
             <p className="-my-100 text-4xl font-serif">
               Every person deserves to be loved just like that.
             </p>
           </div>
-          {/* сделать секцию о пользе проекта что-то такого  */}
         </div>
       </div>
     </>

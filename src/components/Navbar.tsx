@@ -10,7 +10,7 @@ export function Navbar() {
       <nav className="flex justify-between items-center w-[90%] mx-auto pt-5">
         <div>
           <a href="/PersonalAccount">
-            <img src={logotype} alt="" className="w-[50px]" />
+            <img src={logotype} alt="" className="w-[50px]" loading="lazy"/>
           </a>
         </div>
         <div

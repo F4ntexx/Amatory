@@ -48,9 +48,17 @@ function App() {
         </p>
         <div className="flex justify-center">
           <div id="grid" className="grid grid-cols-3 w-200 gap-1 md:gap-5 pl-5">
-            <img src={amatoryLogotype} className="w-[50px]"></img>
-            <img src={questionImage} className="w-[25px]"></img>
-            <img src={notificationImage} className="w-[45px]"></img>
+            <img
+              src={amatoryLogotype}
+              className="w-[50px]"
+              loading="lazy"
+            ></img>
+            <img src={questionImage} className="w-[25px]" loading="lazy"></img>
+            <img
+              src={notificationImage}
+              className="w-[45px]"
+              loading="lazy"
+            ></img>
             <div className="text-xl font-bold">Registration Amatory</div>
             <div className="text-xl font-bold">FAQ</div>
             <div className="text-xl font-bold">Stay Updated</div>
@@ -79,7 +87,7 @@ function App() {
         </div>
       </div>
       <div className="flex items-center flex-col justify-center mt-50 py-20 text-white gap-3">
-        <img src={worldImage} className="md:w-120"></img>
+        <img src={worldImage} className="md:w-120" loading="lazy"></img>
         <div>
           <p className="flex text-center uppercase font-bold text-3xl">
             Trust fate, find amatory
