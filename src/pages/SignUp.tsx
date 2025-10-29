@@ -3,17 +3,14 @@ import SignButton from "../components/SignButtons";
 import { useForm } from "react-hook-form";
 import ErrorMessage from "../components/ErrorMessage";
 import axios from "axios";
-import { observer } from "mobx-react-lite";
-import { AchievementValue } from "../stores/AchievmentValue";
 
-export const SignUp = observer(() => {
+export const SignUp = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  function onSubmit(data: any) {
-    AchievementValue.setloveletter();
+  function onSubmit(data: unknown) {
     axios
       .post("http://localhost:4200/api/users", {
         data,
@@ -98,4 +95,4 @@ export const SignUp = observer(() => {
       </div>
     </>
   );
-});
+};

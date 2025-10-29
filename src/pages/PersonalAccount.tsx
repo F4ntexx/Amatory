@@ -1,15 +1,22 @@
 import { Navbar } from "../components/Navbar";
 import worldImage from "../assets/world.svg";
+import { useNavigate } from "react-router-dom";
 function PersonalAccount() {
+  const navigate = useNavigate();
   function handleLocation() {
-    location.href = "/Profile";
+    navigate("/profile")
   }
   return (
     <>
       <div className="flex flex-col gap-20 h-screen text-white">
         <Navbar />
         <div className="flex flex-col items-center justify-center gap-5">
-          <img src={worldImage} alt="" className="h-50 md:h-70" loading="lazy" />
+          <img
+            src={worldImage}
+            alt=""
+            className="h-50 md:h-70"
+            loading="lazy"
+          />
           <div className="flex  flex-col text-center">
             <h1 className="text-lg">Dating in your pocket</h1>
             <h3 className="text-neutral-500 w-70 lg:w-200">

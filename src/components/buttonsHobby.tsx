@@ -1,5 +1,4 @@
-import { observer } from "mobx-react-lite";
-export const ButtonsElements = observer(() => {
+export const ButtonsElements = () => {
   return (
     <>
       <div>
@@ -29,4 +28,4 @@ export const ButtonsElements = observer(() => {
       </div>
     </>
   );
-});
+};

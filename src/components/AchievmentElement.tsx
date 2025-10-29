@@ -1,5 +1,4 @@
-import { observer } from "mobx-react-lite";
-export const AchievementElement = observer((props: any) => {
+export const AchievementElement = (props: any) => {
   return (
     <>
       <div
@@ -15,4 +14,4 @@ export const AchievementElement = observer((props: any) => {
       </div>
     </>
   );
-});
+};

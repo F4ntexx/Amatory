@@ -9,11 +9,8 @@ import heartTeam from "../assets/heartTeam.svg";
 import heartTower from "../assets/heartTower.svg";
 import heartUnlock from "../assets/heartUnlock.svg";
 import heartWorld from "../assets/heartWorld.svg";
-import { observer } from "mobx-react-lite";
-import { AchievementValue } from "../stores/AchievmentValue";
 
-export const Achievements = observer(() => {
-  console.log(AchievementValue.loveletter)
+export const Achievements = () => {
   return (
     <>
       <div className="h-screen text-white">
@@ -39,4 +36,4 @@ export const Achievements = observer(() => {
       </div>
     </>
   );
-});
+};

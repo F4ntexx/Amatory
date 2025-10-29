@@ -5,7 +5,7 @@ function HeaderIndex() {
     <header className="flex justify-center py-10 text-white">
       <nav className="flex gap-20">
         <a href="/" className="flex gap-2">
-          <img src={AmatoryLogotype} className="w-[50px]" loading="lazy"></img>
+          <img src={AmatoryLogotype} className="h-10 w-10 md:w-20" loading="lazy" alt="logotypeProject"></img>
           <p className="flex text-rose-600 text-2xl font-semibold items-center">
             Amatory
           </p>
